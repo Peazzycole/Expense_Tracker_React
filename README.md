@@ -4,7 +4,7 @@ Here you can add your daily or monthly expenses. There are stored in Firebase
 
 ## Link
 
-https://soft-frangipane-e7ecd3.netlify.app/
+https://splendid-concha-ee5ca4.netlify.app/
 
 ## Preview
 
