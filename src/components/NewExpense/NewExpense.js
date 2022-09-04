@@ -15,7 +15,10 @@ function NewExpense(props) {
 
   return (
     <div className="new-expense">
-      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+      <ExpenseForm
+        onGetList={props.onGetList}
+        onSaveExpenseData={saveExpenseDataHandler}
+      />
     </div>
   );
 }

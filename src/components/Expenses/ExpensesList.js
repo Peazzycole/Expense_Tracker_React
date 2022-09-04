@@ -16,6 +16,7 @@ function ExpensesList(props) {
       return (
         <ExpenseItem
           key={e.id}
+          id={e.id}
           title={e.title}
           amount={e.amount}
           date={e.date}

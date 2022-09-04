@@ -36,12 +36,14 @@ function ExpenseForm(props) {
     console.log(date);
     // sending data to parent component(NewExpense.js)
     props.onSaveExpenseData(expenseData);
+    props.onGetList();
 
     // reseting state
     setTitle("");
     setAmount("");
     setDate("");
     setChangeNewExpense(false);
+    // window.location.reload(false);
   };
 
   const setChangeFalse = () => setChangeNewExpense(false);

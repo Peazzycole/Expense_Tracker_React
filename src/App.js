@@ -29,26 +29,27 @@ function App() {
   const [expenses, setExpenses] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      const response = await fetch(
-        "https://movies-b0cfc-default-rtdb.firebaseio.com/expense.json"
-      );
-      const data = await response.json();
+  const fetchData = async () => {
+    setIsLoading(true);
+    const response = await fetch(
+      "https://movies-b0cfc-default-rtdb.firebaseio.com/expense.json"
+    );
+    const data = await response.json();
 
-      let loadedData = [];
-      for (const key in data) {
-        loadedData.push({
-          id: key,
-          title: data[key].title,
-          amount: data[key].amount,
-          date: new Date(data[key].date),
-        });
-      }
-      setExpenses(loadedData);
-      setIsLoading(false);
-    };
+    let loadedData = [];
+    for (const key in data) {
+      loadedData.push({
+        id: key,
+        title: data[key].title,
+        amount: data[key].amount,
+        date: new Date(data[key].date),
+      });
+    }
+    setExpenses(loadedData);
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
     fetchData();
   }, []);
 
@@ -61,7 +62,7 @@ function App() {
 
   return (
     <div className="App">
-      <NewExpense onAddExpense={addExpenseHandler} />
+      <NewExpense onGetList={fetchData} onAddExpense={addExpenseHandler} />
       <Expenses onLoading={isLoading} items={expenses} />
     </div>
   );
