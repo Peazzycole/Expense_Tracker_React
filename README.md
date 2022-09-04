@@ -3,9 +3,11 @@
 Here you can add your daily or monthly expenses. There are stored in Firebase
 
 ## Link
-`https://soft-frangipane-e7ecd3.netlify.app/`
+
+https://soft-frangipane-e7ecd3.netlify.app/
 
 ## Preview
+
 ![CHEESE!](expense.png)
 
 ## Installation
